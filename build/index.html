@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wordle</title>
+    <title>Quemantle</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <link
@@ -13,54 +13,71 @@
   />
 </head>
 <body>
-    <h1> Wordle Clone </h1>
-    
-    <div id="game-board">
-
+    <div class="w-full absolute flex flex-col overflow-hidden h-full">
+        <div>
+            <h1 id="title"> Quemantle </h1>
+            <h2 id="clue"> "insert clue here" </h2>
+            </div>
+        <div id="middle-container" class="flex flex-col w-full grow overflow-auto relative">
+            <div id="game-scrollbar" class="w-full max-w-[550px] flex-auto m-auto relative overflow-scroll">
+                <div id="game-boards" class="w-full h-full max-w-[550px]">
+                    <div class="game-boards-row w-full h-full">
+                        <div id="game-board-0" class="game-board w-full h-full"></div>
+                        <div id="game-board-1" class="game-board w-full h-full"></div>
+                    </div>
+                    <div class="game-boards-row w-full h-full">
+                        <div id="game-board-2" class="game-board w-full h-full"></div>
+                        <div id="game-board-3" class="game-board w-full h-full"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="keyboard-cont" class="w-full max-w-[550px] flex-auto m-auto relative">
+                <div class="keyboard-row w-full flex justify-center">
+                    <button class="keyboard-button">q</button>
+                    <button class="keyboard-button">w</button>
+                    <button class="keyboard-button">e</button>
+                    <button class="keyboard-button">r</button>
+                    <button class="keyboard-button">t</button>
+                    <button class="keyboard-button">y</button>
+                    <button class="keyboard-button">u</button>
+                    <button class="keyboard-button">i</button>
+                    <button class="keyboard-button">o</button>
+                    <button class="keyboard-button">p</button>
+                </div>
+                <div class="keyboard-row w-full flex justify-center">
+                    <button class="keyboard-button">a</button>
+                    <button class="keyboard-button">s</button>
+                    <button class="keyboard-button">d</button>
+                    <button class="keyboard-button">f</button>
+                    <button class="keyboard-button">g</button>
+                    <button class="keyboard-button">h</button>
+                    <button class="keyboard-button">j</button>
+                    <button class="keyboard-button">k</button>
+                    <button class="keyboard-button">l</button>
+                </div>
+                <div class="keyboard-row w-full flex justify-center">
+                    <button class="keyboard-button">Del</button>
+                    <button class="keyboard-button">z</button>
+                    <button class="keyboard-button">x</button>
+                    <button class="keyboard-button">c</button>
+                    <button class="keyboard-button">v</button>
+                    <button class="keyboard-button">b</button>
+                    <button class="keyboard-button">n</button>
+                    <button class="keyboard-button">m</button>
+                    <button class="keyboard-button">Enter</button>
+                </div>
+                <div class="copy-button-container justify-center">
+                    <button id="copy-button">Copy</button>
+                </div>
+                <div class="copy-text-container justify-center"></div>
+            </div>
+        </div>
     </div>
-
-    <div id="keyboard-cont">
-        <div class="first-row">
-            <button class="keyboard-button">q</button>
-            <button class="keyboard-button">w</button>
-            <button class="keyboard-button">e</button>
-            <button class="keyboard-button">r</button>
-            <button class="keyboard-button">t</button>
-            <button class="keyboard-button">y</button>
-            <button class="keyboard-button">u</button>
-            <button class="keyboard-button">i</button>
-            <button class="keyboard-button">o</button>
-            <button class="keyboard-button">p</button>
-        </div>
-        <div class="second-row">
-            <button class="keyboard-button">a</button>
-            <button class="keyboard-button">s</button>
-            <button class="keyboard-button">d</button>
-            <button class="keyboard-button">f</button>
-            <button class="keyboard-button">g</button>
-            <button class="keyboard-button">h</button>
-            <button class="keyboard-button">j</button>
-            <button class="keyboard-button">k</button>
-            <button class="keyboard-button">l</button>
-        </div>
-        <div class="third-row">
-            <button class="keyboard-button">Del</button>
-            <button class="keyboard-button">z</button>
-            <button class="keyboard-button">x</button>
-            <button class="keyboard-button">c</button>
-            <button class="keyboard-button">v</button>
-            <button class="keyboard-button">b</button>
-            <button class="keyboard-button">n</button>
-            <button class="keyboard-button">m</button>
-            <button class="keyboard-button">Enter</button>
-        </div>
-    </div>
-
 <script
 src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="script.js" type="module"></script>
+<script src="game.js?rndstr=<%= getRandomStr() %>" type="module"></script>
 </body>
 </html>

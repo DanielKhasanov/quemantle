@@ -2,32 +2,60 @@ h1 {
  text-align: center;
 }
 
-#game-board {
+#clue {
+ text-align: center;
+}
+
+#game-boards {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.letter-box {
-  border: 2px solid gray;
-  border-radius: 3px;
-  margin: 2px;
-  font-size: 2.5rem;
+.game-boards-row {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-width: 2px;
+}
+
+.game-board {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  border-width: 2px;
+}
+
+
+.box {
+  position: relative;
+  border-radius: .25rem;
+  margin: .2rem;
   font-weight: 700;
-  height: 3rem;
-  width: 3rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+  min-height: 1vh;
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  border: 2px solid #184e77;
 }
 
 .filled-box {
-  border: 2px solid black;
+  border: 0px;
 }
 
 .letter-row {
   display: flex;
+  width: 100%;
+  border-radius: .25rem;
+  margin: .2rem;
+
 }
 
 #keyboard-cont {
@@ -41,15 +69,126 @@ h1 {
   display: flex;
 }
 
-.second-row {
+.keyboard-row {
   margin: 0.5rem 0;
 }
 
 .keyboard-button {
   font-size: 1rem;
   font-weight: 700;
-  padding: 0.5rem;
   margin: 0 2px;
   cursor: pointer;
   text-transform: uppercase;
+  touch-action: manipulation;
+  background-size: 50% 50%;
+  background-position: 0% 0%,0% 100%,100% 0%,100% 100%;
+  background-repeat: no-repeat;
+  background-color: #D0E5CF;
+  width: calc(10% - .25rem);
+}
+
+.copy-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.copy-text-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#copy-button {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  margin: 0.5rem 2px;
+  cursor: pointer;
+  background-color: #D0E5CF;
+}
+
+html {
+  height: 100vh;
+}
+
+
+body {
+  min-height: 100%;
+  background-color: #277da1;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-auto {
+    flex: 1 1 auto;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.w-full-vh {
+    width: 100vh;
+}
+
+.h-full {
+    height: 100%;
+}
+
+
+.h-full-vh {
+    height: 100vh;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-scroll {
+    overflow: scroll;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
+
+.max-w-\[550px\] {
+    max-width: 550px;
+}
+
+.self-end {
+    align-self: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.w-\[calc\(10\%-0\.25rem\)\] {
+    width: calc(10% - .25rem);
 }
